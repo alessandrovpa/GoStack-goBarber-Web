@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
 import backgroundImage from '../../assets/sign-up-background.png';
@@ -7,6 +7,18 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
+  overflow: hidden;
+`;
+
+const shadeRight = keyframes`
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  },
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  },
 `;
 
 export const Logon = styled.section`
@@ -16,6 +28,8 @@ export const Logon = styled.section`
   align-items: center;
   width: 100%;
   max-width: 700px;
+
+  animation: ${shadeRight} 0.7s;
 
   form {
     display: flex;
